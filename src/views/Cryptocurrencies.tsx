@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
+import { Input, Space } from 'antd';
+const { Search } = Input;
 
 
-export function Stats() {
+
+export function Cryptocurrencies() {
   const [totalCoins, setTotalCoins] = useState(0)
 
   useEffect(() => {
@@ -23,13 +26,14 @@ export function Stats() {
       console.error(err);
     }); 
   })
+  const onSearch = (value:string) => console.log(value);
   return (<>
-    <h1>Global Crypto Stats</h1>
-    <div className="global-stats">
-      <div className="stats-item">
-        <p>Total Cryptocurrencies</p>
-        <p>{totalCoins}</p>
-      </div>
-    </div>
+    <Search
+      placeholder="input search text"
+      allowClear
+      enterButton="Search"
+      size="large"
+      onSearch={onSearch}
+    />
   </>)
 }

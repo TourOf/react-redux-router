@@ -1,32 +1,46 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import { DatePicker } from 'antd';
+import { Home } from './views/Home';
+import { Cryptocurrencies } from './views/Cryptocurrencies';
+
+
 import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
-  // Link
+  Switch,
+  Link
 } from "react-router-dom";
+import { Layout } from 'antd';
+
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
+  const menus = [
+    'Home',
+    'Cryptocurrencies',
+    'Exchanges',
+    'News'
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <Router>
-      <Switch>
-        <Route path="/" exact>
-          <DatePicker />
-        </Route>
-        <Route path="/counter" exact>
-          <Counter />
-        </Route>
-      </Switch>
-     </Router>
-    </div>
+    <Router>
+      <Layout className="App">
+        <Sider className="sidebar">
+            {menus.map(menu => <Link key={menu} to={menu.toLowerCase()} className="menu">{menu}</Link>)}
+        </Sider>
+        <Layout>
+            <Switch>
+              <Route path={['/', '/home']} exact>
+                <Home />
+              </Route>
+              <Route path="/cryptocurrencies" exact>
+                <Cryptocurrencies />
+              </Route>
+            </Switch>
+
+        </Layout>
+      </Layout>
+    </Router>
   );
 }
 
