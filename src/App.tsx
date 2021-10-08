@@ -12,8 +12,11 @@ import {
   Link
 } from "react-router-dom";
 import { Layout } from 'antd';
+import { useAppSelector } from './app/hooks';
 
-const { Header, Footer, Sider, Content } = Layout;
+import {
+  selectPageState
+} from './features/page/pageSlice';
 
 function App() {
   const menus = [
@@ -22,13 +25,20 @@ function App() {
     'Exchanges',
     'News'
   ]
+  const pageStatus = useAppSelector(selectPageState)
+  console.log('pageStatus', pageStatus);
+  
   return (
     <Router>
       <Layout className="App">
-        <Sider className="sidebar">
+        <menu className="sidebar">
             {menus.map(menu => <Link key={menu} to={menu.toLowerCase()} className="menu">{menu}</Link>)}
-        </Sider>
-        <Layout>
+        </menu>
+        <main className="main">
+            <div>
+              {pageStatus.status}
+            </div>
+
             <Switch>
               <Route path={['/', '/home']} exact>
                 <Home />
@@ -37,8 +47,7 @@ function App() {
                 <Cryptocurrencies />
               </Route>
             </Switch>
-
-        </Layout>
+        </main>
       </Layout>
     </Router>
   );
