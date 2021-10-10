@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#App {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+.sidebar {
+  background: #001529;
+  color: aliceblue;
+}
+.main {
+  padding: 20px;
+  overflow: auto;
+}
+.menu {
+  display: block;
+  text-align: center;
+  line-height: 2;
+}
