@@ -1,5 +1,5 @@
 
-import { Card } from 'antd';
+import { Card, Spin } from 'antd';
 import styles from './Coin.module.css';
 import {
   useCoinListQuery
@@ -15,10 +15,7 @@ export function CoinCards() {
   const { data, error, isLoading } = useCoinListQuery(10)
 
   console.log('coins', data, error, isLoading)
-  const dispatch = useAppDispatch();
-
-  dispatch(setStatus(isLoading? 'loading':'idle'))
-
+  if(isLoading) return <Spin />
   return (
     <div className={styles["grid-card"]}>
       {

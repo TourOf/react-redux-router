@@ -12,11 +12,6 @@ import {
   Link
 } from "react-router-dom";
 import { Layout } from 'antd';
-import { useAppSelector } from './app/hooks';
-
-import {
-  selectPageState
-} from './features/page/pageSlice';
 
 function App() {
   const menus = [
@@ -25,8 +20,6 @@ function App() {
     'Exchanges',
     'News'
   ]
-  const pageStatus = useAppSelector(selectPageState)
-  console.log('pageStatus', pageStatus);
   
   return (
     <Router>
@@ -35,10 +28,6 @@ function App() {
             {menus.map(menu => <Link key={menu} to={menu.toLowerCase()} className="menu">{menu}</Link>)}
         </menu>
         <main className="main">
-            <div>
-              {pageStatus.status}
-            </div>
-
             <Switch>
               <Route path={['/', '/home']} exact>
                 <Home />
