@@ -11,4 +11,16 @@
 - Router: React-router
 
 # 工程化
-https://zhuanlan.zhihu.com/p/403970666
+
+[2021 阿里 React 工程化](https://zhuanlan.zhihu.com/p/403970666)
+
+
+## ESLint
+why Vue cli can autofix eslint warning:
+- https://cli.vuejs.org/core-plugins/eslint.html
+plugin autofix eslint warning:
+- https://www.npmjs.com/package/vite-plugin-eslint
+rules that can autofix by eslint
+- https://eslint.org/docs/rules/
+> for example. you can add `"arrow-body-style": ["error", "always"]
+` to `.eslintrc.js` rules support in https://eslint.org/docs/rules/arrow-body-style and use incorrect code for test.
