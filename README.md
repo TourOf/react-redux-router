@@ -38,6 +38,7 @@ Add lint-staged config file: .lintstagedrc.json
 ## commitlint to standard your commit message
 
 If your commit message is invalid, it'll output like belows:
+
 ```
 → No staged files match any configured task.
 ⧗   input: hi
@@ -51,5 +52,6 @@ husky - commit-msg hook exited with code 1 (error)
 ```
 
 # Changelog
+
 TODO:
 https://juejin.cn/post/6934292467160514567#heading-12
