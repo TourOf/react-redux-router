@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
+import { RootState } from '../../app/store';
 
-export type Status = 'idle' | 'loading' | 'failed'
+export type Status = 'idle' | 'loading' | 'failed';
 
 export interface StatusState {
   status: Status;
@@ -10,7 +10,6 @@ export interface StatusState {
 const initialState: StatusState = {
   status: 'idle',
 };
-
 
 export const pageSlice = createSlice({
   name: 'page',
@@ -32,6 +31,8 @@ export const { setStatus } = pageSlice.actions;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectPageState = (state: RootState) => state.pageStatus;
+export const selectPageState = (state: RootState) => {
+  return state.pageStatus;
+};
 
 export default pageSlice.reducer;

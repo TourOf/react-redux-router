@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react"
+// import { useState } from 'react';
 import { Input } from 'antd';
-import {
-  SearchOutlined
-} from '@ant-design/icons';
-import {
-  CoinCards
-} from '../features/coins/Coins'
-
+import { SearchOutlined } from '@ant-design/icons';
+import { CoinCards } from '../features/coins/Coins';
 
 export function Cryptocurrencies() {
-  const [totalCoins, setTotalCoins] = useState(0)
+  // const [totalCoins, setTotalCoins] = useState(0);
 
   // useEffect(() => {
   //   fetch("https://coinranking1.p.rapidapi.com/stats", {
@@ -28,11 +23,20 @@ export function Cryptocurrencies() {
   //   })
   //   .catch(err => {
   //     console.error(err);
-  //   }); 
+  //   });
   // })
-  const onSearch = (value:string) => console.log(value);
-  return (<>
-    <Input size="large" placeholder="large size" prefix={<SearchOutlined />} style={{marginBottom: '30px'}}/>
-    <CoinCards />
-  </>)
+  // const onSearch = (value: string) => {
+  //   return console.log(value);
+  // };
+  return (
+    <>
+      <Input
+        size="large"
+        placeholder="large size"
+        prefix={<SearchOutlined />}
+        style={{ marginBottom: '30px' }}
+      />
+      <CoinCards />
+    </>
+  );
 }

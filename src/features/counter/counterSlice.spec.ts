@@ -4,7 +4,7 @@ import counterReducer, {
   decrement,
   incrementByAmount,
 } from './counterSlice';
-
+/* eslint-disable */ 
 describe('counter reducer', () => {
   const initialState: CounterState = {
     value: 3,

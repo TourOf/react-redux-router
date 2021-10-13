@@ -2,18 +2,19 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import pageReducer from '../features/page/pageSlice';
 
-import {cryptoApi} from '../features/coins/coinsAPI';
+import { cryptoApi } from '../features/coins/coinsAPI';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     pageStatus: pageReducer,
-    [cryptoApi.reducerPath]: cryptoApi.reducer
+    [cryptoApi.reducerPath]: cryptoApi.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(cryptoApi.middleware),
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(cryptoApi.middleware);
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
