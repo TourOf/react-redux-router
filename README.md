@@ -34,3 +34,22 @@ Init husky:`npx husky install && npx husky set .husky/pre-commit "npm run pre-co
 Add lint-staged config file: .lintstagedrc.json
 
 > Why lint-staged: only lint changed files which speed up comparing with all files by Eslint.
+
+## commitlint to standard your commit message
+
+If your commit message is invalid, it'll output like belows:
+```
+→ No staged files match any configured task.
+⧗   input: hi
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+
+✖   found 2 problems, 0 warnings
+ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+husky - commit-msg hook exited with code 1 (error)
+```
+
+# Changelog
+TODO:
+https://juejin.cn/post/6934292467160514567#heading-12
