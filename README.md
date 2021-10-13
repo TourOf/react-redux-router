@@ -26,3 +26,11 @@ why Vue cli can autofix eslint warning:
   > for example. you can add `"arrow-body-style": ["error", "always"] ` to `.eslintrc.js` rules support in https://eslint.org/docs/rules/arrow-body-style and use incorrect code for test.
 
 Config from https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
+
+## husky & lint-staged
+
+Init husky:`npx husky install && npx husky set .husky/pre-commit "npm run pre-commit"`
+
+Add lint-staged config file: .lintstagedrc.json
+
+> Why lint-staged: only lint changed files which speed up comparing with all files by Eslint.
